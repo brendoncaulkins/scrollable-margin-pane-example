@@ -1,0 +1,33 @@
+:host {
+  height: 100%;
+  display: flex;
+}
+
+.main-panel {
+  &__wrapper {
+    // Column layout enables the `flex: 1` on the child to ask it to fill available vertical space
+    display: flex;
+    flex-direction: column;
+
+    // Enable the scroll area
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  &__content {
+    // Fill space in the parent primary direction - vertically in our column
+    flex: 1;
+
+    // Render our paragraphs in a column, themselves
+    display: flex;
+    flex-direction: column;
+
+    // Create the card look and feel
+    background: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+
+    // Here is where we allow the __wrapper parent to become visible, showing that grey background
+    margin: 16px 16px;
+  }
+}

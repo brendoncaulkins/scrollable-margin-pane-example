@@ -1,0 +1,26 @@
+:host {
+  // Display items in a veritcal column
+  display: flex;
+  flex-direction: column;
+
+  // Place a gap between the vertically stacked items
+  gap: 16px;
+
+  // Ensure this has a white background, rather than inheriting the grey from the parent, App
+  background: white;
+
+  // General formatting for a nice, thin, column
+  min-width: 250px;
+  padding: 8px;
+}
+
+.side-panel {
+  &__controls {
+    // Stack the label on top of the input
+    display: flex;
+    flex-direction: column;
+
+    // Don't have the input fill the width
+    width: 150px;
+  }
+}

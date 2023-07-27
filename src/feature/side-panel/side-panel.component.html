@@ -1,0 +1,80 @@
+<div class="side-panel__controls">
+  <label>Number of Paragraphs</label>
+  <input type="number" [formControl]="paragraphsControl" required min="1" />
+</div>
+<div>
+  <p>There are three components here:</p>
+  <ul>
+    <li>App</li>
+    <li>Side-Panel</li>
+    <li>Main-Panel</li>
+  </ul>
+</div>
+<div>
+  <p>
+    <span style="font-weight: bold;">App</span> - contains the grey background,
+    and fills the view, vertically by using
+    <span style="background: lightgrey;">height: 100vh;</span>
+  </p>
+  <p>
+    We are also using Flex layout, throughout.
+    <span style="background: lightgrey;">display: flex;</span> puts the elements
+    into a row, which sits the Side and Main panels side-by-side;
+  </p>
+</div>
+<p>
+  <span style="font-weight: bold;">Side Panel</span> - nothing special here,
+  just uses a white background to cover up the overall grey one.
+</p>
+<p>
+  <span style="font-weight: bold;">Main Panel</span> - Has all the magic, thanks
+  to a pair of nested containers, the
+  <span style="background: lightgrey;">__wrapper</span> and the
+  <span style="background: lightgrey;">__content</span> within.
+</p>
+<div>
+  <p>
+    The
+    <span style="background: lightgrey; font-weight: bold;">__wrapper</span>
+    inherits the full-screen grey background, and is also going to manage our
+    vertical scroll.
+  </p>
+  <p>
+    First, we make use Flex again to establish a column arrangement. While there
+    will be only one item in our column (the
+    <span style="background: lightgrey;">__content</span>), creating a flex
+    column means that we can use flex to force the child to always fill all
+    available vertical space.
+  </p>
+  <p>
+    Then, we enable a scroll area with
+    <span style="background: lightgrey;">scroll: auto;</span>, and
+    <span style="background: lightgrey;">scroll-x: hidden;</span>. This enables
+    a vertical scroll bar when needed, and hides the horizontal scroll, always.
+    (When/if there is a need for a horizontal scroll, the components rendering
+    that content should implement their own horizontal scroll, like with a wide
+    table, for example).
+  </p>
+</div>
+<div>
+  <p>
+    The
+    <span style="background: lightgrey; font-weight: bold;">__content</span>
+    inner div establishes the "card" style look, with the white background and
+    rounded corners.
+  </p>
+  <p>
+    The <span style="background: lightgrey;">flex: 1;</span> asks this inner
+    container to fill teh space if it's parent in the primary direction, which
+    is vertically for a column layout. This is why the card does not shrink when
+    there is empty space below the paragraphs.
+  </p>
+  <p>
+    The main trick after that is the
+    <span style="background: lightgrey;">margin: 16px 16px;</span> which creates
+    the transparent space around the
+    <span style="background: lightgrey;">__content</span> for the
+    <span style="background: lightgrey;">__wrapper</span> to show through, with
+    the grey background.
+  </p>
+</div>

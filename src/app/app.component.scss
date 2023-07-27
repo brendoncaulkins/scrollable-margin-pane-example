@@ -1,0 +1,10 @@
+:host {
+  // Display Side Panel andd Main panel side-by-side
+  display: flex;
+
+  // Fill the screen, vertically.  "vh" = "view-height"
+  height: 100vh;
+
+  // Establish the full-screen background as our grey color
+  background: lightgrey;
+}
